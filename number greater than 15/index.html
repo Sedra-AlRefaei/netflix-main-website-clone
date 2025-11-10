@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #message {
+            font-size: 20px;
+            color: blue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Number Checker</h1>
+    <p>Enter a number. If it's greater than 15, the loop stops.</p>
+    <div id="message"></div>
+
+    <script>
+        let number;
+        let messageDiv = document.getElementById("message");
+
+        do {
+            number = parseInt(prompt("Enter a number:"));  // Prompt user for input
+
+            if (isNaN(number)) {
+                parseInt(prompt("Please enter a valid number!"));
+            } else if (number > 15) {
+                messageDiv.innerHTML = "<b>Number is greater than 15!</b>"; // Display success message
+            } else {
+                parseInt(prompt("The number is less than or equal to 15. Try again!")); // Display error message
+            }
+
+        } while (number <= 15);  // Loop continues until user enters number > 15
+
+    </script>
+
+</body>
+</html>
